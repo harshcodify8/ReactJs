@@ -1,36 +1,50 @@
-/**
- * <div id="parent">
- *    <div id = "child">
- *        <h1>I'm h1 tag</h1>
- *        <h2>I'm h1 tag</h2>
- *   </div>
- *  <div id = "child2">
- *        <h1>I'm h1 tag</h1>
- *        <h2>I'm h1 tag</h2>
- *   </div>
- * </div>
- * ReactElement(Object) => HTML(Browser Understand)
- * While rednring into dom it converst into html
- */
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am h1 tag"),
-    React.createElement("h2", {}, "I am h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I am child h1 tag"),
-    React.createElement("h2", {}, "I am child h2 tag"),
-  ]),
-]);
-// key --> error);
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-console.log(parent);
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading", xyz: "abc" },
-//   "Ronaldo is the goat!"
+import React from "react";
+import ReactDOM from "react-dom/client";
+const elem = <span>React Element</span>;
+const Title1 = function () {
+  return (
+    <h1 className="head" tabIndex="1">
+      Yoooo!!
+    </h1>
+  );
+};
+const Title = () => (
+  <h1 className="head" tabIndex="1">
+    {elem}
+    Yoo!!
+  </h1>
+);
+//React Element
+// const heading = (
+//   <h1 className="head" tabIndex="5">
+//     Ronaldooooooo siuuuuuu!!!
+//   </h1>
 // );
-// console.log(heading); // object
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-//root.render(heading);
+const jsxHeading = (
+  <h1 id="heading" className="head" tabIndex="1">
+    IDK!!
+  </h1>
+);
+// const data = api.getData();
+
+//React Component
+
+// const HeadingComponent = () => {
+//   return <h1 className="heading">Ronaldo is the goat</h1>;
+// };
+const number = 1000;
+const HeadingComponent = () => (
+  <div id="container">
+    {jsxHeading}
+    <h2>{number}</h2>
+    {Title()}
+    <Title />
+    <Title></Title>
+    <h1 className="heading">Ronaldo is the goat</h1>
+  </div>
+);
+//{ISKA ANDHAR KOI BI JAVASCRIPT LIKH SKTA HA}
+// This is component composition jab hum ek comoponent ko dsura m dalte a
+const root = ReactDOM.createRoot(document.getElementById("root"));
+//root.render(jsxHeading);
+root.render(<HeadingComponent />);
