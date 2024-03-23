@@ -24,3 +24,11 @@ import Component from "path"
 
 -Named Export/Import
 import{Component} from "path";
+
+# React Hooks
+
+(Normal Js utility functions) written by facebook developers
+npm react => we got all this utility functions in our code.
+
+- useState() - Superpowerful State Variable in react
+- useEffect() -
