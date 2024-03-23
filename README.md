@@ -18,3 +18,9 @@
 
 - Tree Shaking -> removes unused code for you
 - Different dev and production bundles
+
+-Default Export/Import
+import Component from "path"
+
+-Named Export/Import
+import{Component} from "path";
